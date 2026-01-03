@@ -1,0 +1,7 @@
+id: swarm_right
+name: Swarm Right
+type: shield
+url: https://github.com/BFFGames/Hardware
+requires: [pro_micro]
+features:
+  - keys

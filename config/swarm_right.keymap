@@ -1,0 +1,43 @@
+/*
+ * Swarm Keyboard Right - 30 key (7x4 + 2 thumb) keymap
+ * 
+ * Physical Layout:
+ *   COL0  COL1  COL2  COL3  COL4  COL5  COL6
+ *   [0]   [1]   [2]   [3]   [4]   [5]   [6]   ROW0
+ *   [7]   [8]   [9]   [10]  [11]  [12]  [13]  ROW1
+ *   [14]  [15]  [16]  [17]  [18]  [19]  [20]  ROW2
+ *   [21]  [22]  [23]  [24]  [25]  [26]  [27]  ROW3
+ *                           [28]  [29]        THUMB (on cols 5,6)
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            // Default QWERTY-ish layout (right half, adjust to your preference)
+            bindings = <
+                &kp Y     &kp U     &kp I     &kp O     &kp P     &kp LBKT  &kp RBKT
+                &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT   &kp BSLH
+                &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT &kp RET
+                &kp LGUI  &kp RALT  &kp RCTRL &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
+                                                        &mo 1     &kp SPACE
+            >;
+        };
+
+        function_layer {
+            // Function/Nav layer (activated by thumb key)
+            bindings = <
+                &kp F6    &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans &trans &trans
+                                                        &trans    &trans
+            >;
+        };
+    };
+};

@@ -1,0 +1,6 @@
+if SHIELD_SWARM_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "Swarm Right"
+
+endif
