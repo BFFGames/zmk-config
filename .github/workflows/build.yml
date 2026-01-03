@@ -49,13 +49,13 @@ jobs:
 
       - name: West Build (swarm_right)
         run: |
-          west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=swarm_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+          west build -s zmk/app -b nice_nano -- -DSHIELD=swarm_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
 
       - name: Rename firmware
-        run: cp build/zephyr/zmk.uf2 swarm_right-nice_nano_v2-zmk.uf2
+        run: cp build/zephyr/zmk.uf2 swarm_right-nice_nano-zmk.uf2
 
       - name: Upload firmware
         uses: actions/upload-artifact@v4
         with:
           name: swarm_right-firmware
-          path: swarm_right-nice_nano_v2-zmk.uf2
+          path: swarm_right-nice_nano-zmk.uf2
